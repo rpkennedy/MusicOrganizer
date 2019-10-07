@@ -6,13 +6,14 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.AudioDevice;
 import javazoom.jl.player.FactoryRegistry;
 import javazoom.jl.player.advanced.AdvancedPlayer;
+import java.util.Random;
 
 /**
  * Provide basic playing of MP3 files via the javazoom library.
  * See http://www.javazoom.net/
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @author Ryan Kennedy.
+ * @version 2019.10.07
  */
 public class MusicPlayer
 {
@@ -26,6 +27,17 @@ public class MusicPlayer
     {
         player = null;
     }
+    
+    
+    public int randomTrack()
+    {
+       Random randomGenerator;
+       randomGenerator = new Random();
+       int trackNum = randomGenerator.nextInt();
+       return trackNum;
+    }
+    
+    
     
     /**
      * Play a part of the given file.
